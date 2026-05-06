@@ -74,22 +74,27 @@ fig = px.line(
 st.plotly_chart(fig)
 
 # 📊 กราฟจำนวนผู้ตอบ
-import plotly.express as px
+# 🔢 คำนวณค่า
+avg = df['ร้อยละความพึงพอใจ'].mean()
+total = df['จำนวนทั้งหมด'].sum()
 
-fig = px.line(
-    df_sorted,
-    x="เดือนแสดงผล",
-    y="ร้อยละความพึงพอใจ",
-    markers=True,
-    color_discrete_sequence=["#1f77b4"]
-)
+col1, col2 = st.columns(2)
 
-fig.update_layout(
-    plot_bgcolor="#ffffff",
-    paper_bgcolor="#f5f7fb",
-    font=dict(size=14)
-)
+with col1:
+    st.markdown(f"""
+    <div class="kpi-card">
+        <div class="kpi-title">ความพึงพอใจเฉลี่ย</div>
+        <div class="kpi-value">{avg:.2f}%</div>
+    </div>
+    """, unsafe_allow_html=True)
 
-st.plotly_chart(fig)
+with col2:
+    st.markdown(f"""
+    <div class="kpi-card">
+        <div class="kpi-title">จำนวนผู้ตอบ</div>
+        <div class="kpi-value">{int(total):,}</div>
+        <div style="font-size:13px; color:#6c757d;">คน</div>
+    </div>
+    """, unsafe_allow_html=True)
 
 st.balloons()
