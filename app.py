@@ -15,10 +15,22 @@ st.markdown("""
 # 🎨 CSS ทำกล่อง
 st.markdown("""
 <style>
+st.markdown("""
+<style>
 .kpi-card {
-    background-color: #ffffff;
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
     padding: 20px;
     border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    text-align: center;
+
+    height: 130px;           /* 🔥 บังคับความสูง */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* จัดกลางแนวตั้ง */
+}
+</style>
+""", unsafe_allow_html=True)
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     text-align: center;
 }
