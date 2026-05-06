@@ -19,27 +19,6 @@ st.markdown("""
     background: linear-gradient(135deg, #e3f2fd, #ffffff);
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-    text-align: center;
-
-    height: 130px;           /* 🔥 บังคับความสูง */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* จัดกลางแนวตั้ง */
-}
-</style>
-""", unsafe_allow_html=True)
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
-}
-.kpi-title {
-    font-size: 16px;
-    color: #666;
-}
-.kpi-value {
-    font-size: 32px;
-    font-weight: bold;
-    color: #4A90E2;
 }
 </style>
 """, unsafe_allow_html=True)
