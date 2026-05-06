@@ -15,8 +15,6 @@ st.markdown("""
 # 🎨 CSS ทำกล่อง
 st.markdown("""
 <style>
-st.markdown("""
-<style>
 .kpi-card {
     background: linear-gradient(135deg, #e3f2fd, #ffffff);
     padding: 20px;
