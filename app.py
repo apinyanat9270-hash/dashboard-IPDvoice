@@ -116,4 +116,30 @@ fig.update_traces(textposition="outside")
 
 st.plotly_chart(fig, use_container_width=True)
 
-st.balloons()
+st.markdown("""
+<style>
+.emoji-float {
+    position: fixed;
+    bottom: 0;
+    font-size: 30px;
+    animation: floatUp 3s ease-out forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-600px);
+        opacity: 0;
+    }
+}
+</style>
+
+<div class="emoji-float">😊</div>
+<div class="emoji-float" style="left:20%;">😄</div>
+<div class="emoji-float" style="left:40%;">😁</div>
+<div class="emoji-float" style="left:60%;">🥰</div>
+<div class="emoji-float" style="left:80%;">😍</div>
+""", unsafe_allow_html=True)
