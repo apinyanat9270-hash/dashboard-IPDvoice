@@ -2,8 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # 🔗 ใส่ลิงก์ Google Sheets (CSV)
-url = "https://docs.google.com/spreadsheets/d/e/2PACX...output=csv"
-
+url = "https://docs.google.com/spreadsheets/d/e/2PACX-xxxx/pub?gid=909440641&single=true&output=csv"
 df = pd.read_csv(url)
 
 st.title("📊 ความพึงพอใจผู้ป่วยใน")
