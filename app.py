@@ -50,13 +50,29 @@ with col2:
     </div>
     """, unsafe_allow_html=True)
 
-# 🔽 เรียงเดือนก่อน
+import plotly.express as px
+# เรียงเดือน
 df_sorted = df.sort_values("เดือนลำดับ")
 
 # 📈 กราฟแนวโน้ม
 st.subheader("แนวโน้มรายเดือน")
-st.line_chart(df_sorted.set_index("เดือนแสดงผล")["ร้อยละความพึงพอใจ"])
+
+fig = px.line(
+    df_sorted,
+    x="เดือนแสดงผล",
+    y="ร้อยละความพึงพอใจ",
+    markers=True
+)
+
+st.plotly_chart(fig)
 
 # 📊 กราฟจำนวนผู้ตอบ
 st.subheader("จำนวนผู้ตอบ")
-st.bar_chart(df_sorted.set_index("เดือนแสดงผล")["จำนวนทั้งหมด"])
+
+fig2 = px.bar(
+    df_sorted,
+    x="เดือนแสดงผล",
+    y="จำนวนทั้งหมด"
+)
+
+st.plotly_chart(fig2)
