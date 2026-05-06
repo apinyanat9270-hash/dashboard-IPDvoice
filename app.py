@@ -19,6 +19,30 @@ st.markdown("""
     background: linear-gradient(135deg, #e3f2fd, #ffffff);
     padding: 20px;
     border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    text-align: center;
+
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.kpi-title {
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+.kpi-value {
+    font-size: 36px;   /* 🔥 ทำให้ใหญ่ขึ้น */
+    font-weight: bold;
+    color: #1f4e79;
+}
+
+.kpi-unit {
+    font-size: 14px;
+    color: #6c757d;
 }
 </style>
 """, unsafe_allow_html=True)
