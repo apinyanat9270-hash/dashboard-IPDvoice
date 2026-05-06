@@ -5,14 +5,9 @@ import pandas as pd
 url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS8Iq6XEm88RNQa_TSr4D5TkcMCInqLHuI013bB398uAcvltsjN8xI2cypLsr3cCPR0WBq3xBSlDgPP/pub?gid=909440641&single=true&output=csv"
 df = pd.read_csv(url)
 
-# โลโก้
-col1, col2, col3 = st.columns([1,2,1])
-with col2:
-    st.image("S__13254690_0.jpg", width=140)
-
 # หัวข้อ
 st.markdown("""
-<h1 style='text-align: center;'>
+<h1 style='text-align: center; color: #1f4e79; text-shadow: 1px 1px 2px #ccc;'>
 📊 ประเมินความพึงพอใจผู้ป่วยใน<br>โรงพยาบาลฝาง
 </h1>
 """, unsafe_allow_html=True)
@@ -79,12 +74,22 @@ fig = px.line(
 st.plotly_chart(fig)
 
 # 📊 กราฟจำนวนผู้ตอบ
-st.subheader("จำนวนผู้ตอบ")
+import plotly.express as px
 
-fig2 = px.bar(
+fig = px.line(
     df_sorted,
     x="เดือนแสดงผล",
-    y="จำนวนทั้งหมด"
+    y="ร้อยละความพึงพอใจ",
+    markers=True,
+    color_discrete_sequence=["#1f77b4"]
 )
 
-st.plotly_chart(fig2)
+fig.update_layout(
+    plot_bgcolor="#ffffff",
+    paper_bgcolor="#f5f7fb",
+    font=dict(size=14)
+)
+
+st.plotly_chart(fig)
+
+st.balloons()
