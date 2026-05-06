@@ -49,3 +49,14 @@ with col2:
         <div class="kpi-value">{int(total)}</div>
     </div>
     """, unsafe_allow_html=True)
+
+# 🔽 เรียงเดือนก่อน
+df_sorted = df.sort_values("เดือนลำดับ")
+
+# 📈 กราฟแนวโน้ม
+st.subheader("แนวโน้มรายเดือน")
+st.line_chart(df_sorted.set_index("เดือนแสดงผล")["ร้อยละความพึงพอใจ"])
+
+# 📊 กราฟจำนวนผู้ตอบ
+st.subheader("จำนวนผู้ตอบ")
+st.bar_chart(df_sorted.set_index("เดือนแสดงผล")["จำนวนทั้งหมด"])
