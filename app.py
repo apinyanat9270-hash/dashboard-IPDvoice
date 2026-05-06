@@ -1,3 +1,9 @@
+st.markdown("""
+<h1 style='text-align: center; color: #2c3e50;'>
+📊 ประเมินความพึงพอใจผู้ป่วยใน<br>โรงพยาบาลฝาง
+</h1>
+""", unsafe_allow_html=True)
+
 import streamlit as st
 import pandas as pd
 
