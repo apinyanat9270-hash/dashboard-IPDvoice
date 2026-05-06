@@ -8,7 +8,7 @@ df = pd.read_csv(url)
 # หัวข้อ
 st.markdown("""
 <h1 style='text-align: center; color: #1f4e79; text-shadow: 1px 1px 2px #ccc;'>
-📊 ประเมินความพึงพอใจผู้ป่วยใน<br>โรงพยาบาลฝาง
+📊 ผลการประเมินความพึงพอใจผู้ป่วยใน ปีงบประมาณ 2569<br>โรงพยาบาลฝาง
 </h1>
 """, unsafe_allow_html=True)
 
