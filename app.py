@@ -53,7 +53,8 @@ with col2:
     st.markdown(f"""
     <div class="kpi-card">
         <div class="kpi-title">จำนวนผู้ตอบ</div>
-        <div class="kpi-value">{int(total)}</div>
+        <div class="kpi-value">{int(total):,}</div>
+        <div style="font-size:13px; color:#6c757d;">คน</div>
     </div>
     """, unsafe_allow_html=True)
 
