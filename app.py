@@ -12,7 +12,7 @@ with col2:
 
 st.markdown("""
 <h1 style='text-align: center;'>
-📊 ประเมินความพึงพอใจผู้ป่วยใน<br>โรงพยาบาลฝาง
+📊 ผลประเมินความพึงพอใจผู้ป่วยใน<br>โรงพยาบาลฝาง
 </h1>
 """, unsafe_allow_html=True)
 
