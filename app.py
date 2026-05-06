@@ -5,14 +5,15 @@ import pandas as pd
 url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS8Iq6XEm88RNQa_TSr4D5TkcMCInqLHuI013bB398uAcvltsjN8xI2cypLsr3cCPR0WBq3xBSlDgPP/pub?gid=909440641&single=true&output=csv"
 df = pd.read_csv(url)
 
+# โลโก้
 col1, col2, col3 = st.columns([1,2,1])
-
 with col2:
     st.image("S__13254690_0.jpg", width=140)
 
+# หัวข้อ
 st.markdown("""
 <h1 style='text-align: center;'>
-📊 ผลประเมินความพึงพอใจผู้ป่วยใน<br>โรงพยาบาลฝาง
+📊 ประเมินความพึงพอใจผู้ป่วยใน<br>โรงพยาบาลฝาง
 </h1>
 """, unsafe_allow_html=True)
 
