@@ -1,15 +1,15 @@
-st.markdown("""
-<h1 style='text-align: center; color: #2c3e50;'>
-📊 ประเมินความพึงพอใจผู้ป่วยใน<br>โรงพยาบาลฝาง
-</h1>
-""", unsafe_allow_html=True)
-
 import streamlit as st
 import pandas as pd
 
 # โหลดข้อมูล
 url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS8Iq6XEm88RNQa_TSr4D5TkcMCInqLHuI013bB398uAcvltsjN8xI2cypLsr3cCPR0WBq3xBSlDgPP/pub?gid=909440641&single=true&output=csv"
 df = pd.read_csv(url)
+
+st.markdown("""
+<h1 style='text-align: center; color: #2c3e50;'>
+📊 ประเมินความพึงพอใจผู้ป่วยใน<br>โรงพยาบาลฝาง
+</h1>
+""", unsafe_allow_html=True)
 
 # 🎨 CSS ทำกล่อง
 st.markdown("""
