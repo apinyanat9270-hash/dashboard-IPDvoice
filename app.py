@@ -6,6 +6,12 @@ url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS8Iq6XEm88RNQa_TSr4D5Tkc
 df = pd.read_csv(url)
 
 st.markdown("""
+<div style='text-align: center;'>
+    <img src="S__13254690_0.jpg" width="140"/>
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("""
 <h1 style='text-align: center; color: #2c3e50;'>
 📊 ประเมินความพึงพอใจผู้ป่วยใน<br>โรงพยาบาลฝาง
 </h1>
