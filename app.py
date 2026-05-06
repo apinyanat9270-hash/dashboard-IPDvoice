@@ -120,26 +120,49 @@ st.markdown("""
 <style>
 .emoji-float {
     position: fixed;
-    bottom: 0;
-    font-size: 30px;
-    animation: floatUp 3s ease-out forwards;
+    font-size: 28px;
+    animation: floatUp 4s linear forwards;
+    pointer-events: none;
 }
 
 @keyframes floatUp {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-600px);
-        opacity: 0;
-    }
+    0%   { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-800px); opacity: 0; }
 }
 </style>
 
-<div class="emoji-float">😊</div>
-<div class="emoji-float" style="left:20%;">😄</div>
-<div class="emoji-float" style="left:40%;">😁</div>
-<div class="emoji-float" style="left:60%;">🥰</div>
-<div class="emoji-float" style="left:80%;">😍</div>
+<!-- แถวที่ 1 -->
+<div class="emoji-float" style="left:5%;  bottom:0%;  animation-delay:0s;">😊</div>
+<div class="emoji-float" style="left:25%; bottom:0%;  animation-delay:0.3s;">😄</div>
+<div class="emoji-float" style="left:45%; bottom:0%;  animation-delay:0.6s;">😁</div>
+<div class="emoji-float" style="left:65%; bottom:0%;  animation-delay:0.9s;">🥰</div>
+<div class="emoji-float" style="left:85%; bottom:0%;  animation-delay:1.2s;">😍</div>
+
+<!-- แถวที่ 2 -->
+<div class="emoji-float" style="left:10%; bottom:10%; animation-delay:0.2s;">😊</div>
+<div class="emoji-float" style="left:30%; bottom:10%; animation-delay:0.5s;">😆</div>
+<div class="emoji-float" style="left:50%; bottom:10%; animation-delay:0.8s;">😁</div>
+<div class="emoji-float" style="left:70%; bottom:10%; animation-delay:1.1s;">🥰</div>
+<div class="emoji-float" style="left:90%; bottom:10%; animation-delay:1.4s;">😍</div>
+
+<!-- แถวที่ 3 -->
+<div class="emoji-float" style="left:5%;  bottom:20%; animation-delay:0.4s;">😊</div>
+<div class="emoji-float" style="left:25%; bottom:20%; animation-delay:0.7s;">😄</div>
+<div class="emoji-float" style="left:45%; bottom:20%; animation-delay:1.0s;">😁</div>
+<div class="emoji-float" style="left:65%; bottom:20%; animation-delay:1.3s;">🥰</div>
+<div class="emoji-float" style="left:85%; bottom:20%; animation-delay:1.6s;">😍</div>
+
+<!-- แถวที่ 4 -->
+<div class="emoji-float" style="left:10%; bottom:30%; animation-delay:0.6s;">😊</div>
+<div class="emoji-float" style="left:30%; bottom:30%; animation-delay:0.9s;">😆</div>
+<div class="emoji-float" style="left:50%; bottom:30%; animation-delay:1.2s;">😁</div>
+<div class="emoji-float" style="left:70%; bottom:30%; animation-delay:1.5s;">🥰</div>
+<div class="emoji-float" style="left:90%; bottom:30%; animation-delay:1.8s;">😍</div>
+
+<!-- แถวที่ 5 -->
+<div class="emoji-float" style="left:5%;  bottom:40%; animation-delay:0.8s;">😊</div>
+<div class="emoji-float" style="left:25%; bottom:40%; animation-delay:1.1s;">😄</div>
+<div class="emoji-float" style="left:45%; bottom:40%; animation-delay:1.4s;">😁</div>
+<div class="emoji-float" style="left:65%; bottom:40%; animation-delay:1.7s;">🥰</div>
+<div class="emoji-float" style="left:85%; bottom:40%; animation-delay:2.0s;">😍</div>
 """, unsafe_allow_html=True)
