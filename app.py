@@ -1,21 +1,51 @@
 import streamlit as st
 import pandas as pd
 
-# 🔗 ใส่ลิงก์ Google Sheets (CSV)
+# โหลดข้อมูล
 url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS8Iq6XEm88RNQa_TSr4D5TkcMCInqLHuI013bB398uAcvltsjN8xI2cypLsr3cCPR0WBq3xBSlDgPP/pub?gid=909440641&single=true&output=csv"
 df = pd.read_csv(url)
 
-st.title("📊 ความพึงพอใจผู้ป่วยใน โรงพยาบาลฝาง")
+# 🎨 CSS ทำกล่อง
+st.markdown("""
+<style>
+.kpi-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.kpi-title {
+    font-size: 16px;
+    color: #666;
+}
+.kpi-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #4A90E2;
+}
+</style>
+""", unsafe_allow_html=True)
 
-# KPI
+# 📊 ค่า KPI
+avg = df['ร้อยละความพึงพอใจ'].mean()
+total = df['จำนวนทั้งหมด'].sum()
+
+# 🧱 layout 2 กล่อง
 col1, col2 = st.columns(2)
 
-col1.metric("ความพึงพอใจเฉลี่ย", f"{df['ร้อยละความพึงพอใจ'].mean():.2f}%")
-col2.metric("จำนวนผู้ตอบ", int(df['จำนวนทั้งหมด'].sum()))
+with col1:
+    st.markdown(f"""
+    <div class="kpi-card">
+        <div class="kpi-title">ความพึงพอใจเฉลี่ย</div>
+        <div class="kpi-value">{avg:.2f}%</div>
+    </div>
+    """, unsafe_allow_html=True)
 
-# กราฟ
-st.subheader("แนวโน้มรายเดือน")
-st.line_chart(df.set_index("เดือนแสดงผล")["ร้อยละความพึงพอใจ"])
-
-st.subheader("จำนวนผู้ตอบ")
-st.bar_chart(df.set_index("เดือนแสดงผล")["จำนวนทั้งหมด"])
+with col2:
+    st.markdown(f"""
+    <div class="kpi-card">
+        <div class="kpi-title">จำนวนผู้ตอบ</div>
+        <div class="kpi-value">{int(total)}</div>
+    </div>
+    """, unsafe_allow_html=True)
